@@ -165,9 +165,9 @@ function rate(delta,p,q) # computes the key rate as a function of the channel er
     deltaq=q+(1-2*q)*delta
     s=2*sqrt(2)*(1-2*delta)
     if p==1
-        return lower(s,q,p)-hbin(deltaq)
+        return centropy(s,q,p)-hbin(deltaq)
     else
-        return (pp^2+(1-pp^2))*(lower(s,q,p)-hbin(deltaq))
+        return (pp^2+(1-pp^2))*(centropy(s,q,p)-hbin(deltaq))
     end
 end
 	

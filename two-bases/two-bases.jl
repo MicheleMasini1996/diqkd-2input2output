@@ -57,7 +57,7 @@ function rn(E,q) # key rate with noisy pre-processing and depolarizing noise
 end
 
 function shift(p,q)	# computes the entropy on shifted samples
-    apts=100000
+    apts=10000
     pts=500
     if p==1
         samples=zeros(apts+1,2)
@@ -165,9 +165,9 @@ function rate(delta,p,q) # computes the key rate as a function of the channel er
     deltaq=q+(1-2*q)*delta
     s=2*sqrt(2)*(1-2*delta)
     if p==1
-        return centropy(s,q,p)-hbin(deltaq)
+        return centropy(s,p,q)-hbin(deltaq)
     else
-        return (pp^2+(1-pp^2))*(centropy(s,q,p)-hbin(deltaq))
+        return (pp^2+(1-pp^2))*(centropy(s,p,q)-hbin(deltaq))
     end
 end
 	

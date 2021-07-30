@@ -2,7 +2,12 @@
 
 The code contained in the two folders is based on the article "Simple and practical DIQKD security analysis via BB84-type uncertainty relations and Pauli correlation constraints" (https://arxiv.org/abs/2107.08894). The program language used is Julia.
 
-The file contained in the folder two-bases allows to compute the key rate as a function of the channel error rate or the conditional entropy H(A|E) as a function of the CHSH statistic when both of Alice's bases are exploited to generate the secret key. To run the code, besides a recent Julia distribution, one needs to install the packages Optim, ForwardDiff, Roots, Plots, LinearAlgebra, DynamicPolynomials, SumOfSquares, MosekTools.
+The file contained in the folder two-bases allows to compute the key rate as a function of the channel error rate or the conditional entropy H(A|E) as a function of the CHSH statistic when both of Alice's bases are exploited to generate the secret key. To run the code, besides a recent Julia distribution, one needs to install the packages Optim, ForwardDiff, Roots, Plots, LinearAlgebra, DynamicPolynomials, SumOfSquares, MosekTools. Notice that, to solve problems for which the probability of Alice using her basis is different from 0.5 or 1, you will further need a Mosek license in order to solve the Lasserre hierarchy.
+
+The installation of the packages can be done by launching julia and typing
+
+    using Pkg
+    Pkg.add(["Optim", "ForwardDiff", "Roots", "Plots", "LinearAlgebra", "DynamicPolynomials", "SumOfSquares", "MosekTools"])
 
 One can use the program, e.g., creating a Jupyter Notebook in the same folder where the file two-bases.jl is contained and typing
 
